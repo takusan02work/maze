@@ -1,0 +1,135 @@
+:root {
+    --bg-color: #050510;
+    --wall-color: #1a1a2e;
+    --wall-border: #4a4e69;
+    --path-color: #0b0b1a;
+    --ball-color: #00ffcc;
+    --ball-glow: rgba(0, 255, 204, 0.6);
+    --goal-color: #ff00de;
+    --goal-glow: rgba(255, 0, 222, 0.6);
+    --text-color: #ffffff;
+    --accent-color: #00ffcc;
+    --font-main: 'Outfit', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    touch-action: none; /* Prevent default touch actions like scrolling */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    overflow: hidden; /* Prevent scrolling */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-canvas {
+    display: block;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+#ui-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Let clicks pass through to canvas if needed, but buttons will have auto */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.screen {
+    pointer-events: auto;
+    background: rgba(5, 5, 16, 0.85);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 20px var(--ball-glow);
+    letter-spacing: 2px;
+}
+
+.instruction {
+    font-size: 1rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: #a0a0b0;
+    line-height: 1.6;
+}
+
+.btn {
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    font-family: var(--font-main);
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
+}
+
+.btn:hover {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 30px rgba(0, 255, 204, 0.6);
+}
+
+#game-overlay {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    pointer-events: none;
+}
+
+#timer {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.result-title {
+    font-size: 4rem;
+    color: var(--goal-color);
+    text-shadow: 0 0 30px var(--goal-glow);
+    margin-bottom: 1rem;
+}
+
+#final-time {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+}

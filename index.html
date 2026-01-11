@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MAZE SPHERE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="ui-layer">
+        <div id="start-screen" class="screen">
+            <h1 class="title">MAZE SPHERE</h1>
+            <p class="instruction">Mobile: Tilt to Move<br>Desktop: Arrow Keys</p>
+            <button id="start-btn" class="btn">START GAME</button>
+        </div>
+        <div id="game-overlay" class="hidden">
+            <div id="timer">00:00</div>
+        </div>
+        <div id="result-screen" class="screen hidden">
+            <h2 class="result-title">GOAL!</h2>
+            <p id="final-time">Time: 00:00</p>
+            <button id="retry-btn" class="btn">PLAY AGAIN</button>
+        </div>
+    </div>
+    <canvas id="game-canvas"></canvas>
+    <script src="script.js"></script>
+</body>
+</html>
